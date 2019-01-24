@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web-site:
+    build: ./src/
+    #volumes: .
+    ports:
+      - 8080:80
+    #environment:
+
+  database:
+      build: ./database/
+      ports: 
+        #- 1433:1433
+        - 3306:3306
+      #environment:
+      #  - ACCEPT_EULA:Y
+      #  - SA_PASSWORD=sa
+      MYSQL_ROOT_PASSWORD=root
